@@ -35,6 +35,7 @@ jobs:
     steps:
       # Checkout relevant tag from GitLab
       - name: Checkout from GitLab
+        shell: bash
         run: |
           REPO_URL="${{ github.event.client_payload.gitlab_repo }}"
           git clone --depth 1 --branch ${{ github.event.client_payload.tag }} $REPO_URL .
